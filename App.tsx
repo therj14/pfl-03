@@ -125,7 +125,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#050101] text-white selection:bg-[#a6ff00] selection:text-black">
       {/* Hero Section (BLOCO 1) */}
-      <Section className="relative overflow-hidden pt-12 text-center" style={{ background: 'linear-gradient(to bottom, #210100, #0A0100)' }}>
+      <Section className="relative overflow-hidden pt-12 text-center" style={{ background: 'linear-gradient(to bottom, #2A0505, #1C0202)' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-glow-burgundy -z-10" />
         <div className="max-w-4xl mx-auto flex flex-col items-center">
           <h1 className="text-4xl md:text-7xl font-black mb-10 tracking-tight leading-[1.05]">
@@ -148,13 +148,13 @@ export default function App() {
       </Section>
 
       {/* Preview Section (BLOCO 2) */}
-      <Section className="bg-[#080303] relative z-10 border-y border-white/5">
+      <Section className="relative z-10 border-y border-white/5" style={{ backgroundColor: '#210606' }}>
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-black text-gradient-silver tracking-tight">Veja por dentro como é o pack:</h2>
         </div>
         <div className="mb-24 px-8 md:px-0"><ProcreateCarousel /></div>
         <div className="max-w-[500px] mx-auto">
-          <div className="aspect-[1080/1440] bg-black rounded-3xl overflow-hidden border-2 border-zinc-800 shadow-2xl relative group">
+          <div className="aspect-[1080/1440] bg-black rounded-3xl overflow-hidden border-2 border-zinc-800 shadow-[0_0_40px_rgba(255,255,255,0.1)] relative group">
             <iframe src="https://player.vimeo.com/video/1153788419?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" className="absolute inset-0 w-full h-full" title="Assista à demonstração técnica"></iframe>
           </div>
           <p className="text-center text-[10px] font-black uppercase tracking-[0.2em] mt-6 text-gray-500">Assista à demonstração técnica</p>
@@ -162,7 +162,7 @@ export default function App() {
       </Section>
 
       {/* Routine Section (BLOCO 3) */}
-      <Section className="bg-[#050101]">
+      <Section style={{ backgroundColor: '#1B0404' }}>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-black mb-12 leading-tight max-w-4xl mx-auto">
             <span className="text-white">O que muda na sua rotina como Tatuador com o</span> <span className="text-[#ea580c]">Pack Flora Line</span>
@@ -170,8 +170,8 @@ export default function App() {
           <div className="flex flex-col items-center gap-6 max-w-2xl mx-auto">
             {['Mais projetos finalizados', 'Economiza tempo', 'Reduz o cansaço'].map((text, i) => (
               <div key={i} className="group bg-[#3F1812] hover:bg-[#4F2822] w-full py-10 px-8 rounded-[2rem] border border-white/5 flex flex-col items-center gap-6 shadow-xl transition-all duration-300">
-                {i === 0 ? <CheckCircle2 className="w-16 h-16 text-[#a6ff00] stroke-[2.5]" /> : i === 1 ? <Clock className="w-16 h-16 text-[#a6ff00] stroke-[2.5]" /> : <Battery className="w-16 h-16 text-[#a6ff00] stroke-[2.5]" />}
-                <h3 className="font-black text-2xl md:text-3xl text-white tracking-tight">{text}</h3>
+                {i === 0 ? <CheckCircle2 className="w-16 h-16 text-[#a6ff00] stroke-[2.5] group-hover:drop-shadow-[0_0_8px_rgba(166,255,0,0.8)] transition-all" /> : i === 1 ? <Clock className="w-16 h-16 text-[#a6ff00] stroke-[2.5] group-hover:drop-shadow-[0_0_8px_rgba(166,255,0,0.8)] transition-all" /> : <Battery className="w-16 h-16 text-[#a6ff00] stroke-[2.5] group-hover:drop-shadow-[0_0_8px_rgba(166,255,0,0.8)] transition-all" />}
+                <h3 className="font-black text-2xl md:text-3xl text-white tracking-tight group-hover:text-[#a6ff00] transition-colors">{text}</h3>
               </div>
             ))}
           </div>
@@ -213,7 +213,7 @@ export default function App() {
       </div>
 
       {/* Ideal For Section (BLOCO 5) */}
-      <Section className="bg-[#050101] relative overflow-hidden">
+      <Section className="relative overflow-hidden" style={{ backgroundColor: '#1B0404' }}>
         <h2 className="text-center text-3xl md:text-5xl font-black mb-16 uppercase text-gradient-silver tracking-tight">IDEAL PARA VOCÊ QUE DESEJA...</h2>
         <div className="flex flex-col gap-10 max-w-4xl mx-auto">
           {[
@@ -223,7 +223,7 @@ export default function App() {
             { icon: Users, title: "Atenda mais clientes", desc: "Menos tempo na criação significa mais espaço na agenda e mais faturamento." }
           ].map((item, idx) => (
             <div key={idx}
-              className="relative border border-white/5 p-10 md:p-14 rounded-[2rem] flex flex-col items-center gap-8 shadow-2xl transition-all duration-300 group text-center overflow-hidden bg-[#4F0100] hover:bg-[#810100]"
+              className="relative border border-white/5 p-6 md:p-10 rounded-[2rem] flex flex-col items-center gap-5 shadow-2xl transition-all duration-300 group text-center overflow-hidden bg-[#4F0100] hover:bg-[#810100]"
             >
               <div className="relative z-10 w-20 h-20 md:w-28 md:h-28 rounded-2xl flex items-center justify-center flex-shrink-0 bg-black/40 group-hover:bg-[#a04000] transition-colors mb-4 shadow-xl">
                 <item.icon className="w-10 h-10 md:w-14 md:h-14 text-[#fbbf24] stroke-[1.5]" />
@@ -257,7 +257,7 @@ export default function App() {
           <h2 className="text-center text-3xl md:text-5xl font-extrabold mb-16 uppercase leading-tight tracking-tighter">
             <span className="text-white">AO GARANTIR O</span><br /><span className="text-[#BF3703]">PACK FLORA LINE</span><br /><span className="text-white">VOCÊ RECEBE:</span>
           </h2>
-          <div className="bg-[#0a0202] border border-white/10 rounded-[3rem] p-6 md:p-12 shadow-[0_30px_100px_rgba(0,0,0,0.8)] relative overflow-hidden">
+          <div className="border border-white/10 rounded-[3rem] p-6 md:p-12 shadow-[0_30px_100px_rgba(0,0,0,0.8)] relative overflow-hidden" style={{ backgroundColor: '#222222' }}>
             <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
               <div className="w-full md:w-[45%] flex justify-center items-center relative">
                 <div className="absolute w-[120%] h-[120%] bg-[#BF3703]/10 blur-[80px] rounded-full -z-10" />
@@ -389,15 +389,16 @@ export default function App() {
       </Section>
 
       {/* Pricing Section (BLOCO 9) */}
-      <Section id="ofertas" style={{ background: 'linear-gradient(135deg, #470717 0%, #050101 100%)' }}>
+      <Section id="ofertas" style={{ background: 'linear-gradient(135deg, #0F0302 0%, #1A0404 100%)' }}>
         <h2 className="text-center text-3xl md:text-5xl font-black mb-16 uppercase text-gradient-silver tracking-tight">ESCOLHA A MELHOR OPÇÃO PARA VOCÊ</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
 
           {/* Plano Básico */}
           <div
-            className="p-10 rounded-[3rem] border border-white/5 flex flex-col items-center relative group shadow-none"
+            className="p-10 rounded-[3rem] border border-white/30 flex flex-col items-center relative group shadow-none"
             style={{
-              backgroundColor: '#2e0b0b'
+              background: 'linear-gradient(135deg, rgba(33, 17, 17, 0.8) 0%, rgba(33, 17, 17, 0.6) 100%)',
+              backdropFilter: 'blur(10px)'
             }}
           >
             <h3 className="font-black uppercase tracking-widest text-2xl md:text-4xl mb-12 text-[#D9D9D9]">PLANO BÁSICO</h3>
@@ -434,7 +435,7 @@ export default function App() {
           <div
             className="p-10 rounded-[3rem] border border-white/20 flex flex-col items-center relative overflow-hidden shadow-2xl"
             style={{
-              background: 'radial-gradient(circle at center, #5d0a11 0%, #100303 100%)'
+              background: 'radial-gradient(circle at center, #7A1E1E 0%, #1F0505 100%)'
             }}
           >
             <div className="flex flex-col items-center mb-12">
@@ -460,8 +461,8 @@ export default function App() {
                   {item.isBonus ? (
                     <Star className="w-6 h-6 text-[#fbbf24] fill-[#fbbf24] flex-shrink-0 drop-shadow-[0_0_8px_rgba(251,191,36,0.4)]" />
                   ) : (
-                    <div className="w-6 h-6 rounded-full border-[0.5px] border-white/40 flex items-center justify-center flex-shrink-0">
-                      <Check className="w-3.5 h-3.5 text-[#a6ff00]" strokeWidth={4} />
+                    <div className="w-6 h-6 rounded-full bg-[#a6ff00] flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3.5 h-3.5 text-black" strokeWidth={4} />
                     </div>
                   )}
                   <span>{item.text}</span>
