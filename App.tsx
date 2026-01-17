@@ -418,7 +418,7 @@ export default function App() {
                 <span className="text-sm uppercase font-black text-white/40 tracking-widest">Por apenas</span>
                 <div className="text-5xl font-black text-[#a6ff00] mt-1">R$ 17,90</div>
               </div>
-              <ButtonNeon onClick={() => window.location.href = 'https://pay.hotmart.com/I103632222G?off=88n0fz0d&checkoutMode=10'} className="w-full !px-12">QUERO O BÁSICO</ButtonNeon>
+              <ButtonNeon onClick={() => window.location.href = 'https://pay.hotmart.com/I103632222G?off=88n0fz0d&checkoutMode=10' + window.location.search} className="w-full !px-12">QUERO O BÁSICO</ButtonNeon>
               <img src="https://i.imgur.com/6LIuynd.png" alt="Segurança" className="w-40 h-auto opacity-60 mt-2" />
 
               <div className="flex flex-col items-center mt-6">
@@ -475,7 +475,7 @@ export default function App() {
                 <span className="text-sm uppercase font-black text-white/40 tracking-widest">Tudo por apenas</span>
                 <div className="text-6xl font-black text-[#a6ff00] mt-1">R$ 27,90</div>
               </div>
-              <ButtonNeon onClick={() => window.location.href = 'https://pay.hotmart.com/I103632222G?off=m3oidui6&checkoutMode=10'} className="w-full !px-12">QUERO O COMPLETO</ButtonNeon>
+              <ButtonNeon onClick={() => window.location.href = 'https://pay.hotmart.com/I103632222G?off=m3oidui6&checkoutMode=10' + window.location.search} className="w-full !px-12">QUERO O COMPLETO</ButtonNeon>
               <img src="https://i.imgur.com/6LIuynd.png" alt="Segurança" className="w-44 h-auto opacity-70 mt-2" />
             </div>
           </div>
