@@ -484,7 +484,7 @@ export default function App() {
               <div className="bg-[#a6ff00] px-4 py-1.5 rounded-full mb-3 flex items-center justify-center shadow-[0_0_15px_rgba(166,255,0,0.3)]">
                 <span className="text-green-900 font-black uppercase text-[10px] tracking-widest">MAIS VENDIDO 🔥</span>
               </div>
-              <h3 className="font-black uppercase tracking-widest text-2xl md:text-4xl text-white">PLANO PROFISSIONAL</h3>
+              <h3 className="font-black uppercase tracking-widest text-2xl md:text-4xl text-white text-center">PLANO PROFISSIONAL</h3>
             </div>
 
             <img src="https://i.imgur.com/YQXf3Ie.png" alt="Professional Pack" className="w-full max-w-[650px] h-auto mb-14 drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)] scale-125" />
@@ -520,7 +520,7 @@ export default function App() {
                 <p className="text-sm font-black text-[#fbbf24] mt-2 uppercase tracking-wide"> – Economize R$ 239,90 hoje – </p>
               </div>
               <ButtonNeon onClick={() => handleCheckout('https://pay.hotmart.com/I103632222G?off=m3oidui6&checkoutMode=10')} className="w-full !px-12">QUERO O PROFISSIONAL</ButtonNeon>
-              <p className="text-[10px] text-gray-400/60 font-bold uppercase tracking-widest animate-pulse mt-2">Somente hoje a chance de garantir seu desconto de 90%</p>
+
               <img src="https://i.imgur.com/6LIuynd.png" alt="Segurança" className="w-44 h-auto opacity-70 mt-2" />
             </div>
           </div>
