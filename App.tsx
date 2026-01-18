@@ -125,15 +125,49 @@ export default function App() {
   const handleCheckoutBasico = () => {
     const url = 'https://pay.hotmart.com/I103632222G?off=88n0fz0d&checkoutMode=10';
     const fullUrl = url + window.location.search;
+
     console.log('🔗 CHECKOUT BÁSICO - Link completo:', fullUrl);
-    window.location.href = fullUrl;
+
+    // Dispara o evento InitiateCheckout do Utmify
+    if (typeof window !== 'undefined' && (window as any).pixel) {
+      console.log('📊 Disparando evento InitiateCheckout (Básico)');
+      (window as any).pixel('track', 'InitiateCheckout', {
+        value: 17.90,
+        currency: 'BRL',
+        content_name: 'Pack Flora Line - Plano Básico',
+        content_ids: ['basico'],
+        content_type: 'product'
+      });
+    }
+
+    // Aguarda 300ms para garantir que o pixel seja enviado antes do redirecionamento
+    setTimeout(() => {
+      window.location.href = fullUrl;
+    }, 300);
   };
 
   const handleCheckoutProfissional = () => {
     const url = 'https://pay.hotmart.com/I103632222G?off=m3oidui6&checkoutMode=10';
     const fullUrl = url + window.location.search;
+
     console.log('🔗 CHECKOUT PROFISSIONAL - Link completo:', fullUrl);
-    window.location.href = fullUrl;
+
+    // Dispara o evento InitiateCheckout do Utmify
+    if (typeof window !== 'undefined' && (window as any).pixel) {
+      console.log('📊 Disparando evento InitiateCheckout (Profissional)');
+      (window as any).pixel('track', 'InitiateCheckout', {
+        value: 27.90,
+        currency: 'BRL',
+        content_name: 'Pack Flora Line - Plano Profissional',
+        content_ids: ['profissional'],
+        content_type: 'product'
+      });
+    }
+
+    // Aguarda 300ms para garantir que o pixel seja enviado antes do redirecionamento
+    setTimeout(() => {
+      window.location.href = fullUrl;
+    }, 300);
   };
 
   return (
