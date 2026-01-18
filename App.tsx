@@ -288,7 +288,6 @@ export default function App() {
                   {[
                     { text: 'Digital', icon: Monitor },
                     { text: 'Vitalício', icon: Infinity },
-                    { text: 'Hotmart', icon: ShoppingBag },
                     { text: '7 Dias', icon: Calendar },
                     { text: 'Suporte', icon: Headphones }
                   ].map((badge) => (
@@ -298,15 +297,15 @@ export default function App() {
                     </div>
                   ))}
                 </div>
-              </div>
-            </div>
-            <div className="md:absolute md:bottom-10 md:right-10 mt-10 md:mt-0">
-              <div className="bg-black/80 border border-[#BF3703]/60 p-6 rounded-[2rem] flex items-center gap-4 shadow-2xl">
-                <div className="flex items-center gap-3">
-                  <Smartphone className="w-6 h-6 text-[#a6ff00]" />
-                  <div className="flex flex-col">
-                    <span className="text-[10px] font-black text-[#BF3703] uppercase tracking-[0.2em] mb-1 leading-none">COMPATIBILIDADE</span>
-                    <span className="text-2xl font-black italic text-white tracking-tight leading-none">Procreate</span>
+                <div className="mt-4 md:mt-2">
+                  <div className="bg-black/80 border border-[#BF3703]/60 p-6 rounded-[2rem] flex items-center gap-4 shadow-2xl w-full md:w-fit">
+                    <div className="flex items-center gap-3">
+                      <Smartphone className="w-6 h-6 text-[#a6ff00]" />
+                      <div className="flex flex-col">
+                        <span className="text-[10px] font-black text-[#BF3703] uppercase tracking-[0.2em] mb-1 leading-none">COMPATIBILIDADE</span>
+                        <span className="text-2xl font-black italic text-white tracking-tight leading-none">Procreate</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -372,7 +371,7 @@ export default function App() {
 
               {/* Center Section: Spotlight & Mockup */}
               <div className="flex-grow flex items-center justify-center mb-4 relative min-h-[300px]">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 blur-[120px] rounded-full pointer-events-none opacity-20" style={{ backgroundColor: bonus.accentColor }} />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 blur-[120px] rounded-full pointer-events-none opacity-40" style={{ backgroundColor: bonus.accentColor }} />
                 <img src={bonus.img} alt={bonus.title} className="w-full max-w-[340px] h-auto drop-shadow-[0_25px_45px_rgba(0,0,0,0.7)] animate-float-slow relative z-10" />
               </div>
 
