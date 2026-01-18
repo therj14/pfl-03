@@ -33,15 +33,32 @@ const Section = ({ children, className = "", id = "", style = {} }: { children?:
   </section>
 );
 
-const ButtonNeon = ({ children, className = "", style = {}, onClick }: { children?: React.ReactNode, className?: string, style?: React.CSSProperties, onClick?: () => void }) => (
-  <button
-    onClick={onClick}
-    style={style}
-    className={`bg-[#a6ff00] hover:bg-[#91e000] text-black font-black py-4 px-8 md:py-5 md:px-12 rounded-[1rem] shadow-[0_0_25px_rgba(166,255,0,0.4)] transition-all transform hover:scale-105 uppercase tracking-wider text-sm md:text-xl w-full md:w-auto max-w-md ${className}`}
-  >
-    {children}
-  </button>
-);
+const ButtonNeon = ({ children, className = "", style = {}, onClick, href }: { children?: React.ReactNode, className?: string, style?: React.CSSProperties, onClick?: (e?: any) => void, href?: string }) => {
+  const baseClassName = `bg-[#a6ff00] hover:bg-[#91e000] text-black font-black py-4 px-8 md:py-5 md:px-12 rounded-[1rem] shadow-[0_0_25px_rgba(166,255,0,0.4)] transition-all transform hover:scale-105 uppercase tracking-wider text-sm md:text-xl w-full md:w-auto max-w-md ${className}`;
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        onClick={onClick}
+        style={style}
+        className={`${baseClassName} inline-flex items-center justify-center text-center no-underline`}
+      >
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <button
+      onClick={onClick}
+      style={style}
+      className={baseClassName}
+    >
+      {children}
+    </button>
+  );
+};
 
 const FAQItem = ({ question, answer }: { question: string, answer: React.ReactNode, key?: React.Key }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -122,52 +139,43 @@ const CustomCarousel = () => {
 // --- Main App ---
 
 export default function App() {
-  const handleCheckoutBasico = () => {
-    const url = 'https://pay.hotmart.com/I103632222G?off=88n0fz0d&checkoutMode=10';
-    const fullUrl = url + window.location.search;
+  // URLs dinâmicas que incluem os parâmetros UTM da página atual
+  const [checkoutUrlBasico, setCheckoutUrlBasico] = React.useState('https://pay.hotmart.com/I103632222G?off=88n0fz0d&checkoutMode=10');
+  const [checkoutUrlProfissional, setCheckoutUrlProfissional] = React.useState('https://pay.hotmart.com/I103632222G?off=m3oidui6&checkoutMode=10');
 
-    console.log('🔗 CHECKOUT BÁSICO - Link completo:', fullUrl);
+  // Atualiza as URLs com os parâmetros UTM quando o componente monta
+  React.useEffect(() => {
+    const baseUrlBasico = 'https://pay.hotmart.com/I103632222G?off=88n0fz0d&checkoutMode=10';
+    const baseUrlProfissional = 'https://pay.hotmart.com/I103632222G?off=m3oidui6&checkoutMode=10';
 
-    // Dispara o evento InitiateCheckout do Utmify
-    if (typeof window !== 'undefined' && (window as any).pixel) {
-      console.log('📊 Disparando evento InitiateCheckout (Básico)');
-      (window as any).pixel('track', 'InitiateCheckout', {
-        value: 17.90,
-        currency: 'BRL',
-        content_name: 'Pack Flora Line - Plano Básico',
-        content_ids: ['basico'],
-        content_type: 'product'
-      });
-    }
+    const utmParams = window.location.search;
 
-    // Aguarda 300ms para garantir que o pixel seja enviado antes do redirecionamento
-    setTimeout(() => {
-      window.location.href = fullUrl;
-    }, 300);
-  };
+    setCheckoutUrlBasico(baseUrlBasico + utmParams);
+    setCheckoutUrlProfissional(baseUrlProfissional + utmParams);
 
-  const handleCheckoutProfissional = () => {
-    const url = 'https://pay.hotmart.com/I103632222G?off=m3oidui6&checkoutMode=10';
-    const fullUrl = url + window.location.search;
+    console.log('🔗 URLs de checkout atualizadas:');
+    console.log('   Básico:', baseUrlBasico + utmParams);
+    console.log('   Profissional:', baseUrlProfissional + utmParams);
+  }, []);
 
-    console.log('🔗 CHECKOUT PROFISSIONAL - Link completo:', fullUrl);
+  // Função para disparar o evento de tracking antes do redirecionamento
+  const handleCheckoutClick = (planName: string, value: number, contentId: string) => {
+    return (e: React.MouseEvent<HTMLAnchorElement>) => {
+      // Dispara o evento InitiateCheckout do Utmify
+      if (typeof window !== 'undefined' && (window as any).pixel) {
+        console.log(`📊 Disparando evento InitiateCheckout (${planName})`);
+        (window as any).pixel('track', 'InitiateCheckout', {
+          value: value,
+          currency: 'BRL',
+          content_name: `Pack Flora Line - ${planName}`,
+          content_ids: [contentId],
+          content_type: 'product'
+        });
+      }
 
-    // Dispara o evento InitiateCheckout do Utmify
-    if (typeof window !== 'undefined' && (window as any).pixel) {
-      console.log('📊 Disparando evento InitiateCheckout (Profissional)');
-      (window as any).pixel('track', 'InitiateCheckout', {
-        value: 27.90,
-        currency: 'BRL',
-        content_name: 'Pack Flora Line - Plano Profissional',
-        content_ids: ['profissional'],
-        content_type: 'product'
-      });
-    }
-
-    // Aguarda 300ms para garantir que o pixel seja enviado antes do redirecionamento
-    setTimeout(() => {
-      window.location.href = fullUrl;
-    }, 300);
+      // Não previne o comportamento padrão - deixa o link funcionar normalmente
+      // O delay de 300ms não é mais necessário pois o navegador aguarda naturalmente
+    };
   };
 
   return (
@@ -500,7 +508,13 @@ export default function App() {
                 <div className="text-5xl font-black text-[#a6ff00] mt-1">R$ 17,90</div>
                 <span className="text-lg font-bold text-white/60">ou 2x de 8,95</span>
               </div>
-              <ButtonNeon onClick={handleCheckoutBasico} className="w-full !px-12">QUERO O BÁSICO</ButtonNeon>
+              <ButtonNeon
+                href={checkoutUrlBasico}
+                onClick={handleCheckoutClick('Plano Básico', 17.90, 'basico')}
+                className="w-full !px-12"
+              >
+                QUERO O BÁSICO
+              </ButtonNeon>
               <img src="https://i.imgur.com/6LIuynd.png" alt="Segurança" className="w-40 h-auto opacity-60 mt-2" />
 
               <div className="flex flex-col items-center mt-6">
@@ -559,7 +573,13 @@ export default function App() {
                 <span className="text-xl font-bold text-white/60">ou 3x de 9,10</span>
                 <p className="text-sm font-black text-[#fbbf24] mt-2 uppercase tracking-wide"> – Economize R$ 239,90 hoje – </p>
               </div>
-              <ButtonNeon onClick={handleCheckoutProfissional} className="w-full !px-12">QUERO O PROFISSIONAL</ButtonNeon>
+              <ButtonNeon
+                href={checkoutUrlProfissional}
+                onClick={handleCheckoutClick('Plano Profissional', 27.90, 'profissional')}
+                className="w-full !px-12"
+              >
+                QUERO O PROFISSIONAL
+              </ButtonNeon>
 
               <img src="https://i.imgur.com/6LIuynd.png" alt="Segurança" className="w-44 h-auto opacity-70 mt-2" />
             </div>
