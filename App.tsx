@@ -132,16 +132,24 @@ export default function App() {
       <Section className="relative overflow-hidden pt-12 text-center" style={{ background: 'linear-gradient(to bottom, #2A0505, #1C0202)' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-glow-burgundy -z-10" />
         <div className="max-w-4xl mx-auto flex flex-col items-center">
+          <div className="bg-[#003CFF] text-white px-6 py-2 rounded-xl font-black text-xs md:text-sm uppercase tracking-widest mb-8 border border-white/30 shadow-[0_0_20px_rgba(0,60,255,0.4)]">
+            ⚡ OFERTA ESPECIAL DISPONÍVEL APENAS HOJE 18/01/2026
+          </div>
           <h1 className="text-4xl md:text-7xl font-black mb-10 tracking-tight leading-[1.05]">
-            <span className="text-gradient text-glow-orange">50 Pincéis Florais</span><br />
-            <span className="text-white">para Tattoos Fine Line</span>
+            <span style={{
+              background: 'linear-gradient(to right, #BF3A03, #D18F02)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              filter: 'drop-shadow(0 0 10px rgba(191,58,3,0.4))'
+            }}>Pare de desenhar a mesma flor do zero</span><br />
+            <span className="text-white">e crie mais tattoos em menos tempo.</span>
           </h1>
           <div className="relative w-full max-w-3xl mb-12 animate-float-slow">
-            <img src="https://i.imgur.com/0M32h78.png" alt="Mockup Pack Flora Line" className="w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.9)]" />
+            <img src="https://i.imgur.com/tD8ZV66.png" alt="Mockup Pack Flora Line" className="w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.9)]" />
           </div>
           <div className="max-w-2xl mb-10">
             <p className="text-white/80 text-xl md:text-2xl leading-relaxed font-medium">
-              Pincéis florais pensados para tatuadores criarem artes mais rápido, <span className="font-bold text-white">sem perder seu estilo autoral.</span>
+              São <span className="text-white font-black">50 Pincéis Florais</span> criados para tatuadores que querem criar artes com mais rapidez, mantendo o estilo autoral sem perder tempo com o básico
             </p>
           </div>
           <div className="flex flex-col items-center gap-6 w-full px-4">
@@ -151,17 +159,55 @@ export default function App() {
         </div>
       </Section>
 
-      {/* Preview Section (BLOCO 2) */}
-      <Section className="relative z-10 border-y border-white/5" style={{ backgroundColor: '#210606' }}>
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-black text-gradient-silver tracking-tight">Veja por dentro como é o pack:</h2>
+      {/* Pain Intensification Block (BLOCO 2) */}
+      <Section className="relative overflow-hidden pt-12 pb-24" style={{ background: 'radial-gradient(circle at 50% -20%, #2A0505 0%, #050101 100%)' }}>
+        <div className="max-w-4xl mx-auto flex flex-col items-center text-center gap-12">
+          {/* Headline on top */}
+          <div className="max-w-3xl">
+            <h2 className="text-4xl md:text-6xl font-black mb-10 leading-tight tracking-tight text-white">
+              O problema não é desenhar flores. <br />
+              <span className="text-[#ea580c]">É perder tempo com o que você já domina.</span>
+            </h2>
+          </div>
+
+          {/* Image in middle */}
+          <div className="relative w-full max-w-2xl">
+            <div className="absolute inset-0 bg-[#ea580c]/10 blur-[100px] rounded-full -z-10" />
+            <img src="https://i.imgur.com/bS3ABVl.png" alt="Intensificação da Dor" className="w-full h-auto rounded-[2rem] shadow-2xl border border-white/10" />
+          </div>
+
+          {/* Bullets in a box below */}
+          <div className="w-full max-w-3xl bg-[#1A0501] border border-[#ea580c]/20 p-10 rounded-[3rem] shadow-2xl">
+            <div className="flex flex-col gap-8">
+              {[
+                "Você já sabe desenhar florais fine line, mas ainda começa toda arte do zero.",
+                "Toda tattoo exige repetir folha, galho e base antes de chegar no que importa.",
+                "Esses minutos se acumulam e reduzem a quantidade de tattoos criadas no dia"
+              ].map((bullet, idx) => (
+                <div key={idx} className="flex flex-col items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-[#ea580c]" />
+                  <p className="text-gray-300 text-xl md:text-2xl font-bold leading-relaxed">
+                    {bullet}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="mb-24 px-8 md:px-0"><ProcreateCarousel /></div>
+      </Section>
+
+      {/* Preview Section (BLOCO 3) */}
+      <Section className="relative z-10 border-y border-white/5" style={{ background: 'radial-gradient(circle at 50% 50%, #1C0202 0%, #050101 100%)' }}>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.05]" style={{ background: 'linear-gradient(to bottom, #D5D6D9, #A2A5AB)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            Crie artes florais em poucos minutos
+          </h2>
+        </div>
         <div className="max-w-[500px] mx-auto">
-          <div className="aspect-[1080/1440] bg-black rounded-3xl overflow-hidden border-2 border-zinc-800 shadow-[0_0_40px_rgba(255,255,255,0.1)] relative group">
+          <div className="aspect-[1080/1440] bg-black rounded-3xl overflow-hidden border-2 border-zinc-900 shadow-[0_0_60px_rgba(0,0,0,0.8)] relative group">
             <iframe src="https://player.vimeo.com/video/1153788419?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" className="absolute inset-0 w-full h-full" title="Assista à demonstração técnica"></iframe>
           </div>
-          <p className="text-center text-[10px] font-black uppercase tracking-[0.2em] mt-6 text-gray-500">Assista à demonstração técnica</p>
+          <p className="text-center text-[10px] font-black uppercase tracking-[0.2em] mt-6 text-gray-600">Assista à demonstração técnica</p>
         </div>
       </Section>
 
@@ -169,7 +215,7 @@ export default function App() {
       <Section style={{ backgroundColor: '#1B0404' }}>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-black mb-12 leading-tight max-w-4xl mx-auto">
-            <span className="text-white">O que muda na sua rotina como Tatuador com o</span> <span className="text-[#ea580c]">Pack Flora Line</span>
+            <span className="text-white">O que muda na rotina do tatuador com o</span> <span className="text-[#ea580c]">Pack Flora Line</span>
           </h2>
           <div className="flex flex-col items-center gap-6 max-w-2xl mx-auto">
             {['Mais projetos finalizados', 'Economiza tempo', 'Reduz o cansaço'].map((text, i) => (
@@ -186,7 +232,7 @@ export default function App() {
       <div
         className="py-24 px-4 relative overflow-hidden"
         style={{
-          backgroundColor: '#993300',
+          background: 'linear-gradient(135deg, #B83D00 0%, #632500 100%)',
           position: 'relative'
         }}
       >
@@ -217,14 +263,14 @@ export default function App() {
       </div>
 
       {/* Ideal For Section (BLOCO 5) */}
-      <Section className="relative overflow-hidden" style={{ backgroundColor: '#1B0404' }}>
-        <h2 className="text-center text-3xl md:text-5xl font-black mb-16 uppercase text-gradient-silver tracking-tight">IDEAL PARA VOCÊ QUE DESEJA...</h2>
+      <Section className="relative overflow-hidden" style={{ background: 'radial-gradient(circle at 50% 50%, #2A0505 0%, #050101 100%)' }}>
+        <h2 className="text-center text-3xl md:text-5xl font-black mb-16 uppercase tracking-tight drop-shadow-lg" style={{ background: 'linear-gradient(to bottom, #D5D6D9, #A2A5AB)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>IDEAL PARA VOCÊ QUE DESEJA...</h2>
         <div className="flex flex-col gap-10 max-w-4xl mx-auto">
           {[
-            { icon: Flower2, title: "Artes Fine Line em minutos", desc: "Encurta o caminho entre a ideia e a arte final." },
-            { icon: PenTool, title: "Mantenha seu estilo autoral", desc: "Criar deixa de ser um peso e volta a ser um fluxo." },
-            { icon: Layout, title: "Padronização e Qualidade", desc: "Mantenha o alto nível em todos os seus atendimentos sem offset extra." },
-            { icon: Users, title: "Atenda mais clientes", desc: "Menos tempo na criação significa mais espaço na agenda e mais faturamento." }
+            { icon: Flower2, title: "Criar mais rápido", desc: "Montar artes florais Fine Line em minutos, sem desenhar tudo do zero." },
+            { icon: ShieldCheck, title: "Manter padrão profissional", desc: "Garantir consistência nas tattoos mesmo com agenda cheia." },
+            { icon: PenTool, title: "Preservar o estilo autoral", desc: "Ajustar, combinar e personalizar cada arte ao seu traço." },
+            { icon: Users, title: "Produzir mais no mesmo tempo", desc: "Agilizar a criação e aumentar o número de tattoos por dia." }
           ].map((item, idx) => (
             <div key={idx}
               className="relative border border-white/5 p-6 md:p-10 rounded-[2rem] flex flex-col items-center gap-5 shadow-2xl transition-all duration-300 group text-center overflow-hidden bg-[#4F0100] hover:bg-[#810100]"
@@ -242,7 +288,8 @@ export default function App() {
       </Section>
 
       {/* Custom Section (BLOCO 6) */}
-      <Section className="text-center" style={{ background: 'radial-gradient(circle at center, #9b0f0f 0%, #420707 100%)' }}>
+      <Section className="text-center" style={{ background: 'radial-gradient(circle at 50% 50%, #1a0101 0%, #050101 100%)' }}>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(191,55,3,0.15)_0%,transparent_50%)] pointer-events-none" />
         <h2 className="text-4xl md:text-8xl font-black mb-16 uppercase leading-[1.05] tracking-tighter">MODIFIQUE <span className="text-[#BF3703] italic">100% AO SEU GOSTO</span></h2>
         <div className="px-8 md:px-0"><CustomCarousel /></div>
       </Section>
@@ -258,7 +305,7 @@ export default function App() {
           }}
         />
         <div className="max-w-6xl mx-auto relative z-10">
-          <h2 className="text-center text-3xl md:text-5xl font-extrabold mb-16 uppercase leading-tight tracking-tighter">
+          <h2 className="text-center text-4xl md:text-7xl font-black mb-16 uppercase leading-[1.1] tracking-tighter">
             <span className="text-white">AO GARANTIR O</span><br /><span className="text-[#BF3703]">PACK FLORA LINE</span><br /><span className="text-white">VOCÊ RECEBE:</span>
           </h2>
           <div className="border border-white/10 rounded-[3rem] p-6 md:p-12 shadow-[0_30px_100px_rgba(0,0,0,0.8)] relative overflow-hidden" style={{ backgroundColor: '#222222' }}>
@@ -271,10 +318,10 @@ export default function App() {
                 <div>
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-6 h-6 bg-[#a6ff00] rounded-full flex items-center justify-center"><LayoutGrid className="w-3.5 h-3.5 text-black" /></div>
-                    <h3 className="text-xl md:text-2xl font-black text-white">Pincéis para:</h3>
+                    <h3 className="text-xl md:text-2xl font-black text-white">Dentro do Pack Flora Line você encontra:</h3>
                   </div>
                   <div className="flex flex-col gap-4">
-                    {['Rosas', 'Lírios', 'Crisântemos', 'Sakuras e mais'].map(item => (
+                    {['Pincéis florais de rosas', 'Pincéis florais de lírios', 'Pincéis florais de crisântemos', 'Pincéis florais de sakuras', 'E mais'].map(item => (
                       <div key={item} className="bg-black/40 border border-white/5 rounded-2xl py-4 px-6 flex items-center gap-3 transition-all hover:bg-white/10">
                         <div className="w-5 h-5 bg-[#a6ff00] rounded-full flex items-center justify-center shrink-0">
                           <Check className="w-3 h-3 text-black stroke-[3]" />
@@ -284,29 +331,20 @@ export default function App() {
                     ))}
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <div className="grid grid-cols-2 gap-3">
                   {[
-                    { text: 'Digital', icon: Monitor },
-                    { text: 'Vitalício', icon: Infinity },
-                    { text: '7 Dias', icon: Calendar },
-                    { text: 'Suporte', icon: Headphones }
-                  ].map((badge) => (
-                    <div key={badge.text} className="bg-[#1a1a1a] border border-[#BF3703]/30 rounded-full px-3 py-1 flex items-center gap-1.5 shadow-sm">
-                      <badge.icon className="w-3 h-3 text-[#ea580c]" />
-                      <span className="text-white text-[8px] font-bold uppercase tracking-widest">{badge.text}</span>
+                    "Compatível com Procreate",
+                    "Uso vitalício",
+                    "Acesso imediato",
+                    "Suporte",
+                    "Garantia de 7 Dias",
+                    "Entrega via Hotmart"
+                  ].map((point) => (
+                    <div key={point} className="bg-[#1a1a1a] border border-[#BF3703]/30 rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm">
+                      <div className="w-2 h-2 rounded-full bg-[#ea580c] shrink-0" />
+                      <span className="text-white text-[10px] md:text-xs font-bold uppercase tracking-wider">{point}</span>
                     </div>
                   ))}
-                </div>
-                <div className="mt-4 md:mt-2">
-                  <div className="bg-black/80 border border-[#BF3703]/60 p-6 rounded-[2rem] flex items-center gap-4 shadow-2xl w-full md:w-fit">
-                    <div className="flex items-center gap-3">
-                      <Smartphone className="w-6 h-6 text-[#a6ff00]" />
-                      <div className="flex flex-col">
-                        <span className="text-[10px] font-black text-[#BF3703] uppercase tracking-[0.2em] mb-1 leading-none">COMPATIBILIDADE</span>
-                        <span className="text-2xl font-black italic text-white tracking-tight leading-none">Procreate</span>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -405,10 +443,10 @@ export default function App() {
             }}
           >
             <h3 className="font-black uppercase tracking-widest text-2xl md:text-4xl mb-12 text-[#D9D9D9]">PLANO BÁSICO</h3>
-            <img src="https://i.imgur.com/Gqw4PQn.png" alt="Basic Pack" className="w-full max-w-[360px] h-auto mb-10 drop-shadow-lg" />
+            <img src="https://i.imgur.com/0M32h78.png" alt="Basic Pack" className="w-full max-w-[360px] h-auto mb-10 drop-shadow-lg" />
 
             <ul className="space-y-4 mb-12 w-full max-w-[320px]">
-              {['50 Pincéis Florais', 'Acesso Vitalício', 'Garantia 7 Dias', 'Suporte'].map(item => (
+              {['50 pincéis florais', 'Acesso vitalício', 'Compatível com Procreate', 'Garantia de 7 dias', 'Suporte'].map(item => (
                 <li key={item} className="flex items-center gap-4 text-lg md:text-xl text-white font-medium p-2">
                   <CheckCircle2 className="w-6 h-6 text-[#a6ff00] flex-shrink-0" strokeWidth={2.5} />
                   <span>{item}</span>
@@ -418,8 +456,9 @@ export default function App() {
 
             <div className="mt-auto flex flex-col items-center gap-4 w-full">
               <div className="text-center">
-                <span className="text-sm uppercase font-black text-white/40 tracking-widest">Por apenas</span>
+                <span className="text-sm uppercase font-black text-white/40 tracking-widest">de 97,80 por</span>
                 <div className="text-5xl font-black text-[#a6ff00] mt-1">R$ 17,90</div>
+                <span className="text-lg font-bold text-white/60">ou 2x de 8,95</span>
               </div>
               <ButtonNeon onClick={() => handleCheckout('https://pay.hotmart.com/I103632222G?off=88n0fz0d&checkoutMode=10')} className="w-full !px-12">QUERO O BÁSICO</ButtonNeon>
               <img src="https://i.imgur.com/6LIuynd.png" alt="Segurança" className="w-40 h-auto opacity-60 mt-2" />
@@ -434,7 +473,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* Plano Completo */}
+          {/* Plano Profissional (Antigo Completo) */}
           <div
             className="p-10 rounded-[3rem] border border-white/20 flex flex-col items-center relative overflow-hidden shadow-2xl"
             style={{
@@ -445,10 +484,10 @@ export default function App() {
               <div className="bg-[#a6ff00] px-4 py-1.5 rounded-full mb-3 flex items-center justify-center shadow-[0_0_15px_rgba(166,255,0,0.3)]">
                 <span className="text-green-900 font-black uppercase text-[10px] tracking-widest">MAIS VENDIDO 🔥</span>
               </div>
-              <h3 className="font-black uppercase tracking-widest text-2xl md:text-4xl text-white">PLANO COMPLETO</h3>
+              <h3 className="font-black uppercase tracking-widest text-2xl md:text-4xl text-white">PLANO PROFISSIONAL</h3>
             </div>
 
-            <img src="https://i.imgur.com/OY1TwZZ.png" alt="Complete Pack" className="w-full max-w-[650px] h-auto mb-14 drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)] scale-125" />
+            <img src="https://i.imgur.com/YQXf3Ie.png" alt="Professional Pack" className="w-full max-w-[650px] h-auto mb-14 drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)] scale-125" />
 
             <ul className="space-y-5 mb-12 w-full max-w-[400px]">
               {[
@@ -475,10 +514,13 @@ export default function App() {
 
             <div className="mt-auto flex flex-col items-center gap-4 w-full">
               <div className="text-center">
-                <span className="text-sm uppercase font-black text-white/40 tracking-widest">Tudo por apenas</span>
+                <span className="text-sm uppercase font-black text-white/40 tracking-widest">de 197,80 por</span>
                 <div className="text-6xl font-black text-[#a6ff00] mt-1">R$ 27,90</div>
+                <span className="text-xl font-bold text-white/60">ou 3x de 9,10</span>
+                <p className="text-sm font-black text-[#fbbf24] mt-2 uppercase tracking-wide"> – Economize R$ 239,90 hoje – </p>
               </div>
-              <ButtonNeon onClick={() => handleCheckout('https://pay.hotmart.com/I103632222G?off=m3oidui6&checkoutMode=10')} className="w-full !px-12">QUERO O COMPLETO</ButtonNeon>
+              <ButtonNeon onClick={() => handleCheckout('https://pay.hotmart.com/I103632222G?off=m3oidui6&checkoutMode=10')} className="w-full !px-12">QUERO O PROFISSIONAL</ButtonNeon>
+              <p className="text-[10px] text-gray-400/60 font-bold uppercase tracking-widest animate-pulse mt-2">Somente hoje a chance de garantir seu desconto de 90%</p>
               <img src="https://i.imgur.com/6LIuynd.png" alt="Segurança" className="w-44 h-auto opacity-70 mt-2" />
             </div>
           </div>
