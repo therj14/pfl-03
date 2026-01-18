@@ -124,12 +124,16 @@ const CustomCarousel = () => {
 export default function App() {
   const handleCheckoutBasico = () => {
     const url = 'https://pay.hotmart.com/I103632222G?off=88n0fz0d&checkoutMode=10';
-    window.location.href = url + window.location.search;
+    const fullUrl = url + window.location.search;
+    console.log('🔗 CHECKOUT BÁSICO - Link completo:', fullUrl);
+    window.location.href = fullUrl;
   };
 
   const handleCheckoutProfissional = () => {
     const url = 'https://pay.hotmart.com/I103632222G?off=m3oidui6&checkoutMode=10';
-    window.location.href = url + window.location.search;
+    const fullUrl = url + window.location.search;
+    console.log('🔗 CHECKOUT PROFISSIONAL - Link completo:', fullUrl);
+    window.location.href = fullUrl;
   };
 
   return (
