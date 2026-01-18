@@ -177,9 +177,15 @@ export default function App() {
           </div>
 
           {/* Image in middle */}
-          <div className="relative w-full max-w-2xl">
-            <div className="absolute inset-0 bg-[#ea580c]/10 blur-[100px] rounded-full -z-10" />
-            <img src="https://i.imgur.com/bS3ABVl.png" alt="Intensificação da Dor" className="w-full h-auto rounded-[2rem] shadow-2xl border border-white/10" />
+          <div className="mb-16 max-w-4xl mx-auto relative">
+            <div className="relative overflow-hidden rounded-[2rem] border-[0.5px] border-white/30 shadow-[0_30px_60px_rgba(0,0,0,0.6)]">
+              <div className="relative">
+                <div className="absolute top-4 left-4 z-20"><span className="bg-[#94a3b8] text-white font-black px-6 py-2 rounded-xl text-sm md:text-lg uppercase">ANTES</span></div>
+                <div className="absolute top-4 right-4 z-20"><span className="bg-[#a6ff00] text-black font-black px-6 py-2 rounded-xl text-sm md:text-lg uppercase">DEPOIS</span></div>
+                <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-1 md:w-1.5 bg-[#B83D00] z-10 opacity-60" />
+                <img src="https://i.imgur.com/dQJkh3v.png" alt="Comparativo Flora Line" className="w-full h-auto" />
+              </div>
+            </div>
           </div>
 
           {/* Bullets in a box below */}
@@ -254,15 +260,9 @@ export default function App() {
           <h2 className="text-3xl md:text-5xl font-black mb-16 text-white leading-tight tracking-tighter">
             Você não precisa trabalhar por horas. <span className="bg-[#000000]/25 px-3 py-1 rounded-lg">o pack economiza o seu tempo!</span>
           </h2>
-          <div className="mb-16 max-w-4xl mx-auto relative">
-            <div className="relative overflow-hidden rounded-[2rem] border-[0.5px] border-white/30 shadow-[0_30px_60px_rgba(0,0,0,0.6)]">
-              <div className="relative">
-                <div className="absolute top-4 left-4 z-20"><span className="bg-[#94a3b8] text-white font-black px-6 py-2 rounded-xl text-sm md:text-lg uppercase">ANTES</span></div>
-                <div className="absolute top-4 right-4 z-20"><span className="bg-[#a6ff00] text-black font-black px-6 py-2 rounded-xl text-sm md:text-lg uppercase">DEPOIS</span></div>
-                <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-1 md:w-1.5 bg-[#B83D00] z-10 opacity-60" />
-                <img src="https://i.imgur.com/dQJkh3v.png" alt="Comparativo Flora Line" className="w-full h-auto" />
-              </div>
-            </div>
+          <div className="relative w-full max-w-2xl">
+            <div className="absolute inset-0 bg-[#ea580c]/10 blur-[100px] rounded-full -z-10" />
+            <img src="https://i.imgur.com/bS3ABVl.png" alt="Intensificação da Dor" className="w-full h-auto rounded-[2rem] shadow-2xl border border-white/10" />
           </div>
           <ButtonNeon onClick={() => document.getElementById('ofertas')?.scrollIntoView({ behavior: 'smooth' })} className="!text-sm md:!text-lg !py-3 !px-8 !rounded-[1rem]">QUERO COMEÇAR AGORA!</ButtonNeon>
         </div>
