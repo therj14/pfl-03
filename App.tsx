@@ -260,10 +260,6 @@ export default function App() {
           <h2 className="text-3xl md:text-5xl font-black mb-16 text-white leading-tight tracking-tighter">
             Você não precisa trabalhar por horas. <span className="bg-[#000000]/25 px-3 py-1 rounded-lg">o pack economiza o seu tempo!</span>
           </h2>
-          <div className="relative w-full max-w-2xl">
-            <div className="absolute inset-0 bg-[#ea580c]/10 blur-[100px] rounded-full -z-10" />
-            <img src="https://i.imgur.com/bS3ABVl.png" alt="Intensificação da Dor" className="w-full h-auto rounded-[2rem] shadow-2xl border border-white/10" />
-          </div>
           <ButtonNeon onClick={() => document.getElementById('ofertas')?.scrollIntoView({ behavior: 'smooth' })} className="!text-sm md:!text-lg !py-3 !px-8 !rounded-[1rem]">QUERO COMEÇAR AGORA!</ButtonNeon>
         </div>
       </div>
