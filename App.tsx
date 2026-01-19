@@ -295,6 +295,16 @@ export default function App() {
           position: 'relative'
         }}
       >
+        {/* Image overlay on gradient background */}
+        <div
+          className="absolute inset-0 opacity-20 pointer-events-none"
+          style={{
+            backgroundImage: "url('https://i.imgur.com/XW2BTjn.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            mixBlendMode: 'overlay'
+          }}
+        />
         <div className="max-w-5xl mx-auto relative z-10 text-center">
           <h2 className="text-3xl md:text-5xl font-black mb-16 text-white leading-tight tracking-tighter">
             Você não precisa trabalhar por horas. <span className="bg-[#000000]/25 px-3 py-1 rounded-lg">o pack economiza o seu tempo!</span>
