@@ -318,8 +318,18 @@ export default function App() {
 
       {/* Ideal For Section (BLOCO 5) */}
       <Section className="relative overflow-hidden" style={{ background: 'radial-gradient(circle at 50% 50%, #2A0505 0%, #050101 100%)' }}>
-        <h2 className="text-center text-3xl md:text-5xl font-black mb-16 uppercase tracking-tight drop-shadow-lg" style={{ background: 'linear-gradient(to bottom, #D5D6D9, #A2A5AB)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>IDEAL PARA VOCÊ QUE DESEJA...</h2>
-        <div className="flex flex-col gap-10 max-w-4xl mx-auto">
+        {/* Image overlay on gradient background */}
+        <div
+          className="absolute inset-0 opacity-[0.08] pointer-events-none"
+          style={{
+            backgroundImage: "url('https://i.imgur.com/WgTOlxa.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            mixBlendMode: 'overlay'
+          }}
+        />
+        <h2 className="text-center text-3xl md:text-5xl font-black mb-16 uppercase tracking-tight drop-shadow-lg relative z-10" style={{ background: 'linear-gradient(to bottom, #D5D6D9, #A2A5AB)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>IDEAL PARA VOCÊ QUE DESEJA...</h2>
+        <div className="flex flex-col gap-10 max-w-4xl mx-auto relative z-10">
           {[
             { icon: Flower2, title: "Criar mais rápido", desc: "Montar artes florais Fine Line em minutos, sem desenhar tudo do zero." },
             { icon: ShieldCheck, title: "Manter padrão profissional", desc: "Garantir consistência nas tattoos mesmo com agenda cheia." },
