@@ -183,9 +183,10 @@ export default function App() {
       {/* Hero Section (BLOCO 1) */}
       <Section className="relative overflow-hidden pt-12 text-center" style={{ background: 'linear-gradient(to bottom, #2A0505, #1C0202)' }}>
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-glow-burgundy -z-10" />
+        <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(255,255,255,0.15) 0%, transparent 3%), radial-gradient(circle at 60% 70%, rgba(255,255,255,0.1) 0%, transparent 2%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.12) 0%, transparent 2.5%), radial-gradient(circle at 30% 80%, rgba(255,255,255,0.08) 0%, transparent 2%), radial-gradient(circle at 90% 60%, rgba(255,255,255,0.1) 0%, transparent 2%)' }} />
         <div className="max-w-4xl mx-auto flex flex-col items-center">
-          <div className="bg-[#003CFF] text-white px-6 py-2 rounded-xl font-black text-xs md:text-sm uppercase tracking-widest mb-8 border border-white/30 shadow-[0_0_20px_rgba(0,60,255,0.4)]">
-            ⚡ OFERTA ESPECIAL DISPONÍVEL APENAS HOJE 18/01/2026
+          <div className="bg-[#003CFF] text-white px-6 py-2 rounded-xl font-black text-[10px] md:text-xs uppercase tracking-widest mb-8 border border-white/30 shadow-[0_0_20px_rgba(0,60,255,0.4)]">
+            ⚡ OFERTA ESPECIAL DISPONÍVEL APENAS HOJE 20/01/2026
           </div>
           <h1 className="text-4xl md:text-7xl font-black mb-10 tracking-tight leading-[1.05]">
             <span style={{
@@ -200,7 +201,7 @@ export default function App() {
             <img src="https://i.imgur.com/tD8ZV66.png" alt="Mockup Pack Flora Line" className="w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.9)]" />
           </div>
           <div className="max-w-2xl mb-10">
-            <p className="text-white/80 text-xl md:text-2xl leading-relaxed font-medium">
+            <p className="text-white/80 text-lg md:text-xl leading-relaxed font-medium">
               São <span className="text-white font-black">50 Pincéis Florais</span> criados para tatuadores que querem criar artes com mais rapidez, mantendo o estilo autoral sem perder tempo com o básico
             </p>
           </div>
@@ -290,14 +291,14 @@ export default function App() {
       <div
         className="py-24 px-4 relative overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, #B83D00 0%, #632500 100%)',
+          background: 'linear-gradient(135deg, #c15723 0%, #040427 100%)',
           position: 'relative'
         }}
       >
         <div
           className="absolute inset-0 opacity-[0.15] pointer-events-none"
           style={{
-            backgroundImage: "url('https://i.imgur.com/WgTOlxa.png')",
+            backgroundImage: "url('https://i.imgur.com/XW2BTjn.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -401,7 +402,7 @@ export default function App() {
       </div>
 
       {/* Bonuses Section (BLOCO 8) */}
-      <Section className="text-center" style={{ background: 'linear-gradient(to right, #8E2500, #632500)' }}>
+      <Section className="text-center" style={{ background: 'linear-gradient(135deg, #c15723 0%, #040427 100%)' }}>
         <h2
           className="text-4xl md:text-7xl font-black mb-6 uppercase tracking-tighter"
           style={{
