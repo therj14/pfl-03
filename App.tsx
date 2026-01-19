@@ -136,6 +136,32 @@ const CustomCarousel = () => {
   );
 };
 
+const comparisonSlides = [
+  "https://i.imgur.com/lwmgzB0.png",
+  "https://i.imgur.com/HHKB6d8.png",
+  "https://i.imgur.com/1gL99u2.png",
+];
+
+const ComparisonCarousel = () => {
+  const [current, setCurrent] = React.useState(0);
+  const next = () => setCurrent((prev) => (prev + 1) % comparisonSlides.length);
+  const prev = () => setCurrent((prev) => (prev - 1 + comparisonSlides.length) % comparisonSlides.length);
+
+  return (
+    <div className="relative group max-w-4xl mx-auto">
+      <button onClick={prev} className="absolute left-[-20px] md:left-[-60px] top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center text-black shadow-lg border-2 border-zinc-200 hover:bg-[#a6ff00] transition-all transform hover:scale-110">
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+      <button onClick={next} className="absolute right-[-20px] md:right-[-60px] top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center text-black shadow-lg border-2 border-zinc-200 hover:bg-[#a6ff00] transition-all transform hover:scale-110">
+        <ChevronRight className="w-6 h-6" />
+      </button>
+      <div className="relative aspect-[1350/1150] overflow-hidden rounded-[2rem] border-[0.5px] border-white/30 shadow-[0_30px_60px_rgba(0,0,0,0.7)]">
+        <img src={comparisonSlides[current]} alt={`Comparison Slide ${current + 1}`} className="w-full h-full object-cover transition-opacity duration-300" />
+      </div>
+    </div>
+  );
+};
+
 // --- Main App ---
 
 export default function App() {
@@ -270,7 +296,7 @@ export default function App() {
         </div>
       </Section>
 
-      {/* Routine Section (BLOCO 3) */}
+      {/* Routine Section (BLOCO 4) */}
       <Section style={{ backgroundColor: '#1B0404' }}>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-black mb-12 leading-tight max-w-4xl mx-auto">
@@ -287,7 +313,7 @@ export default function App() {
         </div>
       </Section>
 
-      {/* Comparison Section (BLOCO 4) */}
+      {/* Comparison Section (BLOCO 5) */}
       <div
         className="py-24 px-4 relative overflow-hidden"
         style={{
@@ -299,7 +325,7 @@ export default function App() {
         <div
           className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
-            backgroundImage: "url('https://i.imgur.com/XW2BTjn.png')",
+            backgroundImage: "url('https://i.imgur.com/WgTOlxa.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             mixBlendMode: 'overlay'
@@ -309,14 +335,14 @@ export default function App() {
           <h2 className="text-3xl md:text-5xl font-black mb-16 text-white leading-tight tracking-tighter">
             Você não precisa trabalhar por horas. <span className="bg-[#000000]/25 px-3 py-1 rounded-lg">o pack economiza o seu tempo!</span>
           </h2>
-          <div className="mb-16 flex justify-center">
-            <img src="https://i.imgur.com/XW2BTjn.png" alt="Floral Design" className="w-full max-w-2xl h-auto rounded-2xl shadow-2xl" />
+          <div className="mb-16">
+            <ComparisonCarousel />
           </div>
           <ButtonNeon onClick={() => document.getElementById('ofertas')?.scrollIntoView({ behavior: 'smooth' })} className="!text-sm md:!text-lg !py-3 !px-8 !rounded-[1rem]">QUERO COMEÇAR AGORA!</ButtonNeon>
         </div>
       </div>
 
-      {/* Ideal For Section (BLOCO 5) */}
+      {/* Ideal For Section (BLOCO 6) */}
       <Section className="relative overflow-hidden" style={{ background: 'radial-gradient(circle at 50% 50%, #2A0505 0%, #050101 100%)' }}>
         {/* Image overlay on gradient background */}
         <div
@@ -351,14 +377,14 @@ export default function App() {
         </div>
       </Section>
 
-      {/* Custom Section (BLOCO 6) */}
+      {/* Custom Section (BLOCO 7) */}
       <Section className="text-center" style={{ background: 'radial-gradient(circle at 50% 50%, #1a0101 0%, #050101 100%)' }}>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(191,55,3,0.15)_0%,transparent_50%)] pointer-events-none" />
         <h2 className="text-4xl md:text-8xl font-black mb-16 uppercase leading-[1.05] tracking-tighter">MODIFIQUE <span className="text-[#BF3703] italic">100% AO SEU GOSTO</span></h2>
         <div className="px-8 md:px-0"><CustomCarousel /></div>
       </Section>
 
-      {/* Bundle Details (BLOCO 7) */}
+      {/* Bundle Details (BLOCO 8) */}
       <div className="bg-[#050101] py-24 px-4 relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.05] pointer-events-none"
@@ -416,7 +442,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* Bonuses Section (BLOCO 8) */}
+      {/* Bonuses Section (BLOCO 9) */}
       <Section className="text-center" style={{ background: 'linear-gradient(135deg, #c15723 0%, #040427 100%)' }}>
         <h2
           className="text-4xl md:text-7xl font-black mb-6 uppercase tracking-tighter"
@@ -493,7 +519,7 @@ export default function App() {
         </div>
       </Section>
 
-      {/* Pricing Section (BLOCO 9) */}
+      {/* Pricing Section (BLOCO 10) */}
       <Section id="ofertas" style={{ background: 'linear-gradient(135deg, #0F0302 0%, #1A0404 100%)' }}>
         <h2 className="text-center text-3xl md:text-5xl font-black mb-16 uppercase text-gradient-silver tracking-tight">ESCOLHA A MELHOR OPÇÃO PARA VOCÊ</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
@@ -604,7 +630,7 @@ export default function App() {
         </div>
       </Section>
 
-      {/* FAQ Section (BLOCO 10) */}
+      {/* FAQ Section (BLOCO 11) */}
       <Section className="bg-[#050101] border-t border-white/5">
         <h2 className="text-center text-3xl font-black mb-16 uppercase">Dúvidas Frequentes</h2>
         <div className="max-w-3xl mx-auto space-y-2">
