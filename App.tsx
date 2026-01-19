@@ -185,7 +185,7 @@ export default function App() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-glow-burgundy -z-10" />
         <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(255,255,255,0.15) 0%, transparent 3%), radial-gradient(circle at 60% 70%, rgba(255,255,255,0.1) 0%, transparent 2%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.12) 0%, transparent 2.5%), radial-gradient(circle at 30% 80%, rgba(255,255,255,0.08) 0%, transparent 2%), radial-gradient(circle at 90% 60%, rgba(255,255,255,0.1) 0%, transparent 2%)' }} />
         <div className="max-w-4xl mx-auto flex flex-col items-center">
-          <div className="bg-[#003CFF] text-white px-6 py-2 rounded-xl font-black text-[10px] md:text-xs uppercase tracking-widest mb-8 border border-white/30 shadow-[0_0_20px_rgba(0,60,255,0.4)]">
+          <div className="bg-[#003CFF] text-white px-4 py-1.5 rounded-xl font-black text-[9px] md:text-[10px] uppercase tracking-widest mb-8 border border-white/30 shadow-[0_0_20px_rgba(0,60,255,0.4)]">
             ⚡ OFERTA ESPECIAL DISPONÍVEL APENAS HOJE 20/01/2026
           </div>
           <h1 className="text-4xl md:text-7xl font-black mb-10 tracking-tight leading-[1.05]">
@@ -295,18 +295,13 @@ export default function App() {
           position: 'relative'
         }}
       >
-        <div
-          className="absolute inset-0 opacity-[0.15] pointer-events-none"
-          style={{
-            backgroundImage: "url('https://i.imgur.com/XW2BTjn.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
         <div className="max-w-5xl mx-auto relative z-10 text-center">
           <h2 className="text-3xl md:text-5xl font-black mb-16 text-white leading-tight tracking-tighter">
             Você não precisa trabalhar por horas. <span className="bg-[#000000]/25 px-3 py-1 rounded-lg">o pack economiza o seu tempo!</span>
           </h2>
+          <div className="mb-16 flex justify-center">
+            <img src="https://i.imgur.com/XW2BTjn.png" alt="Floral Design" className="w-full max-w-2xl h-auto rounded-2xl shadow-2xl" />
+          </div>
           <ButtonNeon onClick={() => document.getElementById('ofertas')?.scrollIntoView({ behavior: 'smooth' })} className="!text-sm md:!text-lg !py-3 !px-8 !rounded-[1rem]">QUERO COMEÇAR AGORA!</ButtonNeon>
         </div>
       </div>
