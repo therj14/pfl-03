@@ -212,7 +212,7 @@ export default function App() {
         <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(255,255,255,0.15) 0%, transparent 3%), radial-gradient(circle at 60% 70%, rgba(255,255,255,0.1) 0%, transparent 2%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.12) 0%, transparent 2.5%), radial-gradient(circle at 30% 80%, rgba(255,255,255,0.08) 0%, transparent 2%), radial-gradient(circle at 90% 60%, rgba(255,255,255,0.1) 0%, transparent 2%)' }} />
         <div className="max-w-4xl mx-auto flex flex-col items-center">
           <div className="bg-[#003CFF] text-white px-4 py-1.5 rounded-xl font-black text-[9px] md:text-[10px] uppercase tracking-widest mb-8 border border-white/30 shadow-[0_0_20px_rgba(0,60,255,0.4)]">
-            ⚡ OFERTA ESPECIAL DISPONÍVEL APENAS HOJE 20/01/2026
+            ⚡ OFERTA ESPECIAL DISPONÍVEL APENAS HOJE 19/01/2026
           </div>
           <h1 className="text-4xl md:text-7xl font-black mb-10 tracking-tight leading-[1.05]">
             <span style={{
