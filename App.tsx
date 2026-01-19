@@ -111,9 +111,9 @@ const ProcreateCarousel = () => {
 };
 
 const customSlides = [
-  "https://i.imgur.com/ZKece5J.png",
-  "https://i.imgur.com/zr7wYx7.png",
-  "https://i.imgur.com/deumurx.png",
+  "/images/image 1  carossel bloco 7.webp",
+  "/images/image 2  carossel bloco 7.webp",
+  "/images/image 3  carossel bloco 7.webp",
 ];
 
 const CustomCarousel = () => {
@@ -137,9 +137,9 @@ const CustomCarousel = () => {
 };
 
 const comparisonSlides = [
-  "https://i.imgur.com/lwmgzB0.png",
-  "https://i.imgur.com/HHKB6d8.png",
-  "https://i.imgur.com/1gL99u2.png",
+  "/images/image 1 carossel bloco 5.webp",
+  "/images/image 2 carossel bloco 5.webp",
+  "/images/image 3 carossel bloco 5.webp",
 ];
 
 const ComparisonCarousel = () => {
@@ -224,7 +224,7 @@ export default function App() {
             <span className="text-white">e crie mais tattoos em menos tempo.</span>
           </h1>
           <div className="relative w-full max-w-3xl mb-12 animate-float-slow">
-            <img src="https://i.imgur.com/tD8ZV66.png" alt="Mockup Pack Flora Line" className="w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.9)]" />
+            <img src="/images/image bloco 1.webp" alt="Mockup Pack Flora Line" className="w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.9)]" />
           </div>
           <div className="max-w-2xl mb-10">
             <p className="text-white/80 text-lg md:text-xl leading-relaxed font-medium">
@@ -256,7 +256,7 @@ export default function App() {
                 <div className="absolute top-4 left-4 z-20"><span className="bg-[#94a3b8] text-white font-black px-6 py-2 rounded-xl text-sm md:text-lg uppercase">ANTES</span></div>
                 <div className="absolute top-4 right-4 z-20"><span className="bg-[#a6ff00] text-black font-black px-6 py-2 rounded-xl text-sm md:text-lg uppercase">DEPOIS</span></div>
                 <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-1 md:w-1.5 bg-[#B83D00] z-10 opacity-60" />
-                <img src="https://i.imgur.com/dQJkh3v.png" alt="Comparativo Flora Line" className="w-full h-auto" />
+                <img src="/images/image bloco 2.webp" alt="Comparativo Flora Line" className="w-full h-auto" />
               </div>
             </div>
           </div>
@@ -325,7 +325,7 @@ export default function App() {
         <div
           className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
-            backgroundImage: "url('https://i.imgur.com/WgTOlxa.png')",
+            backgroundImage: "url('/images/image fundo bloco 5 e bloco 8.webp')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             mixBlendMode: 'overlay'
@@ -348,7 +348,7 @@ export default function App() {
         <div
           className="absolute inset-0 opacity-[0.08] pointer-events-none"
           style={{
-            backgroundImage: "url('https://i.imgur.com/WgTOlxa.png')",
+            backgroundImage: "url('/images/image fundo bloco 5 e bloco 8.webp')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             mixBlendMode: 'overlay'
@@ -389,7 +389,7 @@ export default function App() {
         <div
           className="absolute inset-0 opacity-[0.05] pointer-events-none"
           style={{
-            backgroundImage: `url('https://i.imgur.com/WgTOlxa.png')`,
+            backgroundImage: `url('/images/image fundo bloco 5 e bloco 8.webp')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -402,7 +402,7 @@ export default function App() {
             <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
               <div className="w-full md:w-[45%] flex justify-center items-center relative">
                 <div className="absolute w-[120%] h-[120%] bg-[#BF3703]/10 blur-[80px] rounded-full -z-10" />
-                <img src="https://i.imgur.com/0M32h78.png" alt="Pack Flora Line Mockup" className="w-full h-auto drop-shadow-[0_15px_40px_rgba(0,0,0,0.6)] animate-float-slow" />
+                <img src="/images/image plano completo e image do bloco 8.webp" alt="Pack Flora Line Mockup" className="w-full h-auto drop-shadow-[0_15px_40px_rgba(0,0,0,0.6)] animate-float-slow" />
               </div>
               <div className="w-full md:w-[55%] flex flex-col gap-10">
                 <div>
@@ -500,7 +500,7 @@ export default function App() {
               {/* Center Section: Spotlight & Mockup */}
               <div className="flex-grow flex items-center justify-center mb-4 relative min-h-[300px]">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 blur-[120px] rounded-full pointer-events-none opacity-40" style={{ backgroundColor: bonus.accentColor }} />
-                <img src={bonus.img} alt={bonus.title} className="w-full max-w-[340px] h-auto drop-shadow-[0_25px_45px_rgba(0,0,0,0.7)] animate-float-slow relative z-10" />
+                <img src={bonus.id === 1 ? "/images/image bonus 1 bloco 9.webp" : bonus.id === 2 ? "/images/image bonus 2 bloco 9.webp" : "/images/image bonus 3 bloco 9.webp"} alt={bonus.title} className="w-full max-w-[340px] h-auto drop-shadow-[0_25px_45px_rgba(0,0,0,0.7)] animate-float-slow relative z-10" />
               </div>
 
               {/* Bottom Section: Typography & Footer */}
@@ -533,7 +533,7 @@ export default function App() {
             }}
           >
             <h3 className="font-black uppercase tracking-widest text-2xl md:text-4xl mb-12 text-[#D9D9D9]">PLANO BÁSICO</h3>
-            <img src="https://i.imgur.com/0M32h78.png" alt="Basic Pack" className="w-full max-w-[360px] h-auto mb-10 drop-shadow-lg" />
+            <img src="/images/image plano completo e image do bloco 8.webp" alt="Basic Pack" className="w-full max-w-[360px] h-auto mb-10 drop-shadow-lg" />
 
             <ul className="space-y-4 mb-12 w-full max-w-[320px]">
               {['50 pincéis florais', 'Acesso vitalício', 'Compatível com Procreate', 'Garantia de 7 dias', 'Suporte'].map(item => (
@@ -583,7 +583,7 @@ export default function App() {
               <h3 className="font-black uppercase tracking-widest text-2xl md:text-4xl text-white text-center">PLANO PROFISSIONAL</h3>
             </div>
 
-            <img src="https://i.imgur.com/YQXf3Ie.png" alt="Professional Pack" className="w-full max-w-[650px] h-auto mb-14 drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)] scale-125" />
+            <img src="/images/image plano completo bloco 10.webp" alt="Professional Pack" className="w-full max-w-[650px] h-auto mb-14 drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)] scale-125" />
 
             <ul className="space-y-5 mb-12 w-full max-w-[400px]">
               {[
